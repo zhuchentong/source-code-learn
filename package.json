@@ -8,7 +8,7 @@
     "index.d.ts"
   ],
   "scripts": {
-    "build": "tsc && vite-node build",
+    "build": "tsc && vite build",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },

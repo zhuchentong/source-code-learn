@@ -9,9 +9,9 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: "./lib/main.ts",
-      name: "Counter",
-      fileName: "counter",
+      entry: "./src/index.ts",
+      name: "index",
+      fileName: "index",
     },
   },
 });
