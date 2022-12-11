@@ -20,4 +20,26 @@ describe("omit test", () => {
     expect(data.d.e).toHaveProperty("y");
     expect(data.d.e).not.toHaveProperty("x");
   });
+
+  it("error type test", async () => {
+    const data = omit(obj, ["d.e.s"]);
+    expect(data).toHaveProperty("a");
+    expect(data).toHaveProperty("d");
+    expect(data.d).toHaveProperty("e");
+    expect(data.d.e).toHaveProperty("y");
+    expect(data.d.e).toHaveProperty("x");
+
+    expect(data).toEqual(obj);
+  });
+
+  it("exception type test", async () => {
+    const data = omit(obj, ["_..😊.._"]);
+    expect(data).toHaveProperty("a");
+    expect(data).toHaveProperty("d");
+    expect(data.d).toHaveProperty("e");
+    expect(data.d.e).toHaveProperty("y");
+    expect(data.d.e).toHaveProperty("x");
+
+    expect(data).toEqual(obj);
+  });
 });
